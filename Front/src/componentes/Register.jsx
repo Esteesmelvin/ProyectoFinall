@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const RegisterPage = () => {
     const [name, setName] = useState('');
@@ -29,19 +30,16 @@ const RegisterPage = () => {
 
         try {
             // Realizar la solicitud POST a la API del backend
-            const response = await fetch('http://localhost:4000/api/auth/register', {
-                method: 'POST',
-                mode: 'no-cors',
+            const response = await axios.post('http://localhost:4000/api/auth/register', data, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(data),
             });
 
             // Verificar si la solicitud fue exitosa
-            if (response.ok) {
-                const responseData = await response.json();
-                console.log('Registro exitoso:', responseData);
+            if (response.data) {
+                console.log('Registro exitoso:', response.data);
+
             } else {
                 console.log('Error en el registro:', response.statusText);
             }

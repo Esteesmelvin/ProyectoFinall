@@ -4,8 +4,6 @@ import '../index.css';
 import { initializeApp } from 'firebase/app';
 import 'firebase/auth';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import axios from 'axios';
-
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -20,14 +18,8 @@ const Login = () => {
         setPassword(e.target.value);
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post(`${backendUrl}/login`, { email, password });
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
-        }
     };
     
     const firebaseConfig = {
@@ -56,10 +48,6 @@ const Login = () => {
             .catch((error) => {
                 setError(error.message);
             });
-
-
-    
-    
     };
 
 return (
