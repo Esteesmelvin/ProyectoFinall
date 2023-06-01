@@ -1,0 +1,46 @@
+.amigos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .amigos-title {
+    margin-top: 50px;
+    font-size: 32px;
+  }
+  
+  .amigos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .amigos-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .amigos-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .amigos-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .amigos-item-name {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
