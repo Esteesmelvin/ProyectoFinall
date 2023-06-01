@@ -7,6 +7,8 @@ exports.register = async (req, res) => {
     try {
         const { name, email, password } = req.body;
 
+        console.log(req.body)
+
         // Verificar si ya existe un usuario con el mismo correo electrónico
         const existingUser = await User.findOne({ email });
         if (existingUser) {
